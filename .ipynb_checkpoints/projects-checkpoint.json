@@ -1,0 +1,14 @@
+[
+  {
+    "title": "\ud83c\udf31 Plant Disease Detection (CNN, PyTorch)",
+    "repo_url": "https://github.com/Iyanuoluwa007/Plant-Disease-Detection-using-CNN-PyTorch",
+    "description": "From-scratch CNN for multi-class plant leaf disease classification. Includes Streamlit demo and metrics.",
+    "tech": [
+      "PyTorch",
+      "Streamlit",
+      "Computer Vision"
+    ],
+    "demo_url": "https://3mnekkk72qqwwnntmzeqwx.streamlit.app/",
+    "thumbnail": "https://opengraph.githubassets.com/1/Iyanuoluwa007/Plant-Disease-Detection-using-CNN-PyTorch"
+  }
+]
