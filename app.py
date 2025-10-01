@@ -33,7 +33,7 @@ st.markdown("""
 
 st.write("")
 
-# ---------- Load Featured Projects ----------
+# ---------- Load Projects ----------
 def load_projects():
     cfg_path = pathlib.Path("projects.json")
     if cfg_path.exists():
@@ -42,44 +42,27 @@ def load_projects():
 
 projects = load_projects()
 
-# ---------- Tabs ----------
-tab1, tab2, tab3, tab4 = st.tabs(["🤖 Robotics", "🧠 Computer Vision", "📊 AI/ML", "⚙️ Deployment"])
+# ---------- Render Projects Straight Down ----------
+st.subheader("📂 My Projects")
 
-# ---------- Helper: Render Project Cards ----------
-def render_project_card(project):
-    col1, col2 = st.columns([1,2])
-    with col1:
-        if project.get("thumbnail"):
-            st.image(project["thumbnail"], use_column_width=True)
-    with col2:
-        st.markdown(f"### [{project['title']}]({project['repo_url']})")
-        st.write(project.get("description", ""))
-        if "tech" in project:
-            st.markdown(" ".join([f"<span class='chip'>{t}</span>" for t in project["tech"]]), unsafe_allow_html=True)
-        btns = st.columns(2)
-        with btns[0]:
-            st.link_button("GitHub Repo", project["repo_url"], use_container_width=True)
-        with btns[1]:
-            if project.get("demo_url"):
-                st.link_button("Live Demo", project["demo_url"], use_container_width=True)
-
-# ---------- Display Projects by Category ----------
-categories = {
-    "🤖 Robotics": ["ros2_yolo_ws", "submarine_ws", "ws_moveit"],
-    "🧠 Computer Vision": ["Plant-Disease-Detection-using-CNN-PyTorch", "Brain-Tumor-Classification", "British-Sign-Language-BSL-Recognition"],
-    "📊 AI/ML": ["Gesture_Control", "Yolo_and_SSD", "Chatgpt-bigram"],
-    "⚙️ Deployment": ["streamlit-portfolio", "mlops_pipeline_project", "cloud_ml_deployment"]
-}
-
-tabs = [tab1, tab2, tab3, tab4]
-for tab, (cat, repo_names) in zip(tabs, categories.items()):
-    with tab:
-        st.subheader(f"{cat} Projects")
-        for pr in projects:
-            if any(name.lower() in pr['repo_url'].lower() for name in repo_names):
-                with st.container():
-                    render_project_card(pr)
-                    st.markdown("---")
+for pr in projects:
+    with st.container():
+        st.markdown(f"### [{pr['title']}]({pr['repo_url']})")
+        st.write(pr.get("description", ""))
+        
+        # Tech stack chips
+        if "tech" in pr:
+            st.markdown(" ".join([f"<span class='chip'>{t}</span>" for t in pr["tech"]]), unsafe_allow_html=True)
+        
+        # Links
+        col1, col2 = st.columns([1,1])
+        with col1:
+            st.link_button("GitHub Repo", pr["repo_url"], use_container_width=True)
+        with col2:
+            if pr.get("demo_url"):
+                st.link_button("Live Demo", pr["demo_url"], use_container_width=True)
+        
+        st.markdown("---")
 
 # ---------- Contact Section ----------
 st.markdown("""
