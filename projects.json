@@ -1,14 +1,17 @@
 [
   {
-    "title": "\ud83c\udf31 Plant Disease Detection (CNN, PyTorch)",
+    "title": "🌱 Plant Disease Detection (CNN, PyTorch)",
     "repo_url": "https://github.com/Iyanuoluwa007/Plant-Disease-Detection-using-CNN-PyTorch",
-    "description": "From-scratch CNN for multi-class plant leaf disease classification. Includes Streamlit demo and metrics.",
-    "tech": [
-      "PyTorch",
-      "Streamlit",
-      "Computer Vision"
-    ],
+    "description": "From-scratch CNN for multi-class plant disease classification. Achieved >95% accuracy and deployed with Streamlit.",
+    "tech": ["PyTorch", "Computer Vision", "Streamlit"],
     "demo_url": "https://3mnekkk72qqwwnntmzeqwx.streamlit.app/",
     "thumbnail": "https://opengraph.githubassets.com/1/Iyanuoluwa007/Plant-Disease-Detection-using-CNN-PyTorch"
+  },
+  {
+    "title": "🧠 Brain Tumor Classification (MRI, CNN)",
+    "repo_url": "https://github.com/Iyanuoluwa007/Brain-Tumor-Identification",
+    "description": "CNN model to classify MRI scans into glioma, meningioma, no tumor, and pituitary tumor. Used for healthcare AI demos.",
+    "tech": ["PyTorch", "Healthcare AI", "CNN"],
+    "thumbnail": "https://opengraph.githubassets.com/1/Iyanuoluwa007/Brain-Tumor-Identification"
   }
 ]
