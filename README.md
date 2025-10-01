@@ -31,7 +31,7 @@ To run this project locally:
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Iyanuoluwa007/streamlit-portfolio.git
-   cd portfolio-site
+   cd /streamlit-portfolio
    ```
 
 2. **Install dependencies**
